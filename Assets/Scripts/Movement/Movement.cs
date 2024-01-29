@@ -4,26 +4,20 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float forceSaut = 10f;
-    private Rigidbody2D rb;
-
+    private float minX = -1.8f;
+    private float maxX = 1.8f;
+    private float maxY = 3f;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(moveX, 0);
+        transform.Translate(movement * Time.deltaTime * 5) ;
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y);
 
-        Vector2 movement = new Vector2(moveX, moveY);
-
-        transform.Translate(movement * Time.deltaTime * 5);
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            rb.velocity = Vector2.up * forceSaut;
-        }
     }
 }

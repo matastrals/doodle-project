@@ -17,13 +17,12 @@ public class Gestion : MonoBehaviour
     void Update()
     {
         // Si la touche droite est enfoncée
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.A))
         {
-            spriteRenderer.sprite = Character; 
+            spriteRenderer.sprite = Character;
           
         }
-        
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.D))
         {
             spriteRenderer.sprite = CharacterLeft; 
             
