@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gestion : MonoBehaviour
 {
@@ -24,8 +25,13 @@ public class Gestion : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            spriteRenderer.sprite = CharacterLeft; 
+           spriteRenderer.sprite = CharacterLeft; 
             
+        }
+
+        if (gameObject.transform.position.y < -5.5f)
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

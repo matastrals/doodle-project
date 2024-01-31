@@ -6,6 +6,7 @@ public class MovePlatform : MonoBehaviour
 {
     private GameObject player;
     private GameObject[] clones;
+    private float speed = 0.02f;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -26,8 +27,7 @@ public class MovePlatform : MonoBehaviour
         {
             if (clone != null)
             {
-                clone.transform.Translate(new Vector2(0, -3) * Time.deltaTime * 0.03f);
-                /*player.transform.Translate(new Vector2(0, -3) * Time.deltaTime * 8) ;*/
+                clone.transform.Translate(new Vector2(0, -6) * Time.deltaTime * speed);
             }
         }
     }

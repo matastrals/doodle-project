@@ -6,14 +6,16 @@ public class IsPlayerOn : MonoBehaviour
 {
 
     public GameObject player;
+
     void Start()
     {
         EdgeCollider2D ec = GetComponent<EdgeCollider2D>();
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -24,5 +26,6 @@ public class IsPlayerOn : MonoBehaviour
             Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(0f, 5f);
         }
+        
     }
 }

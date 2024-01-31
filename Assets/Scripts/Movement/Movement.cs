@@ -6,7 +6,6 @@ public class Movement : MonoBehaviour
 {
     private float minX = -1.8f;
     private float maxX = 1.8f;
-    private float maxY = 3f;
     void Start()
     {
 
